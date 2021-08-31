@@ -1,10 +1,10 @@
 package indi.shui4.directbuffer;
 
 import com.google.common.base.Stopwatch;
-import com.google.common.base.Supplier;
 import org.junit.jupiter.api.Test;
 
 import java.nio.ByteBuffer;
+import java.util.function.Supplier;
 
 /**
  * 堆 vs 直接 内存操作耗时比较
