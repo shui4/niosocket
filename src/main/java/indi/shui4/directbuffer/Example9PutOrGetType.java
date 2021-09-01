@@ -21,7 +21,7 @@ public class Example9PutOrGetType {
     System.out.println(bb.getLong(0));
     bb.position(0);
     System.out.println(bb.getLong());
-    // 0,0,0,0,0,0,0,1,0,0
+    // 127,-1,-1,-1,-1,-1,-1,-1,0,0
     System.out.println(BufferUtil.getContent(bb));
   }
 }
