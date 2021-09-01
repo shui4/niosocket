@@ -8,9 +8,9 @@ import java.util.function.BiConsumer;
  * @author shui4
  * @since 2021/9/1(1.0)
  */
-public interface BufferUtil {
+public class BufferUtil {
 
-  static String getContent(ByteBuffer buffer) {
+  public static String getContent(ByteBuffer buffer) {
     StringBuilder builder = new StringBuilder();
     final int position = buffer.position();
     buffer.position(0);
@@ -23,5 +23,13 @@ public interface BufferUtil {
     }
     buffer.position(position);
     return builder.toString();
+  }
+
+  public static final byte[] byteArrayIn = new byte[8];
+
+  static {
+    for (int i = 0; i < byteArrayIn.length; i++) {
+      byteArrayIn[i] = (byte) (i + 1);
+    }
   }
 }
