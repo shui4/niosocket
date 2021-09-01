@@ -21,7 +21,12 @@ public class Example11_ToCharBuffer_Modify {
     final ByteBuffer byteBuffer = ByteBuffer.wrap(byteArrayIn);
     final CharBuffer charBuffer = byteBuffer.asCharBuffer();
     System.out.println(BufferUtil.getContent(byteBuffer));
+    // 修改CharBuffer，ByteBuffer跟着变
     charBuffer.put(1, '他');
+    System.out.println(BufferUtil.getContent(byteBuffer));
+    System.out.println(BufferUtil.getContent(charBuffer));
+    // 修改ByteBuffer，CharBuffer跟着变
+    byteBuffer.put(1, (byte) 98);
     System.out.println(BufferUtil.getContent(byteBuffer));
     System.out.println(BufferUtil.getContent(charBuffer));
   }
