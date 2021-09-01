@@ -1,7 +1,13 @@
 package indi.shui4.util;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.collection.ListUtil;
+
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiConsumer;
 
 /**
@@ -23,6 +29,18 @@ public class BufferUtil {
     }
     buffer.position(position);
     return builder.toString();
+  }
+
+  public static String getContent(CharBuffer buffer) {
+    List list = new ArrayList();
+    final int position = buffer.position();
+    buffer.position(0);
+
+    while (buffer.hasRemaining()) {
+      list.add(buffer.get());
+    }
+    buffer.position(position);
+    return CollUtil.join(list, ",");
   }
 
   public static final byte[] byteArrayIn = new byte[8];
