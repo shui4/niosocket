@@ -3,7 +3,7 @@ package indi.shui4.directbuffer;
 import java.nio.CharBuffer;
 
 /**
- * @author xdc
+ * @author shui4
  * @since 2021/8/31(1.0)
  */
 public class Example1 {

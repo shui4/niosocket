@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 /**
  * 堆 vs 直接 内存操作耗时比较
  *
- * @author xdc
+ * @author shui4
  * @since 2021/8/31(1.0)
  */
 public class Example2_HeapVSDirectOpt {
