@@ -1,12 +1,13 @@
 package indi.shui4.util;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.collection.ListUtil;
+import cn.hutool.core.map.MapUtil;
 
 import java.nio.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
+import java.util.Map;
 
 /**
  * @author shui4
@@ -87,6 +88,17 @@ public class BufferUtil {
   }
 
   public static final byte[] byteArrayIn = new byte[8];
+
+  public static void print(String id, ByteBuffer byteBuffer) {
+    System.out.println(
+        id
+            + " capacity="
+            + byteBuffer.capacity()
+            + " limit="
+            + byteBuffer.limit()
+            + " position="
+            + byteBuffer.position());
+  }
 
   static {
     for (int i = 0; i < byteArrayIn.length; i++) {
