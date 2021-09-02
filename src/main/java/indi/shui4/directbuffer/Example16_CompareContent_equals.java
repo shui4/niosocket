@@ -15,6 +15,7 @@ public class Example16_CompareContent_equals {
   @Test
   public void case1() {
     final ByteBuffer byteBuffer = ByteBuffer.allocate(8);
+    // true
     System.out.println(byteBuffer.equals(byteBuffer));
   }
 
@@ -22,6 +23,7 @@ public class Example16_CompareContent_equals {
   @Test
   public void case2() {
     final ByteBuffer byteBuffer = ByteBuffer.allocate(8);
+    // false
     System.out.println(byteBuffer.equals(1));
   }
 
@@ -32,8 +34,11 @@ public class Example16_CompareContent_equals {
     final ByteBuffer byteBuffer2 = ByteBuffer.wrap(new byte[] {1, 2, 3, 4, 5, 6, 7, 8});
     byteBuffer1.position(0);
     byteBuffer2.position(3);
+    // false
     System.out.println(byteBuffer1.equals(byteBuffer2));
+    // byteBuffer1:3
     System.out.println("byteBuffer1:" + byteBuffer1.remaining());
+    // byteBuffer2:5
     System.out.println("byteBuffer2:" + byteBuffer2.remaining());
   }
 
@@ -47,9 +52,12 @@ public class Example16_CompareContent_equals {
 
     byteBuffer2.position(2);
     byteBuffer2.limit(5);
+    // byteBuffer1.equals(byteBuffer2):true
     System.out.println("byteBuffer1.equals(byteBuffer2):" + byteBuffer1.equals(byteBuffer2));
     byteBuffer2.put(3, (byte) 44);
+    // byteBuffer2 index：3改为44之后
     System.out.println("byteBuffer2 index：3改为44之后");
+    // byteBuffer1.equals(byteBuffer2):false
     System.out.println("byteBuffer1.equals(byteBuffer2):" + byteBuffer1.equals(byteBuffer2));
   }
 

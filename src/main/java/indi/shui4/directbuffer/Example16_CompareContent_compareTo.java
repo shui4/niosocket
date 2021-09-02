@@ -18,6 +18,7 @@ public class Example16_CompareContent_compareTo {
     final ByteBuffer byteBuffer2 = ByteBuffer.wrap(new byte[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
     byteBuffer1.position(0);
     byteBuffer2.position(2);
+    // -5
     System.out.println(byteBuffer1.compareTo(byteBuffer2));
   }
 
@@ -28,6 +29,7 @@ public class Example16_CompareContent_compareTo {
     final ByteBuffer byteBuffer2 = ByteBuffer.wrap(new byte[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
     byteBuffer1.position(0);
     byteBuffer2.position(2);
+    // -5
     System.out.println(byteBuffer1.compareTo(byteBuffer2));
   }
 }
