@@ -1,5 +1,5 @@
 /**
- * directbuffer这个包名纯属弄错，不想换了
+ * directBuffer这个包名纯属弄错，不想换了，byteBuffer！！
  *
  * @author shui4
  * @since 2021/9/1(1.0)
