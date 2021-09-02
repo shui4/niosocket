@@ -35,7 +35,7 @@ public class Example10_SpliceAndArrayOffset {
     print(bb1, bb2);
     System.out.println();
     System.out.println("arrayOffset:" + bb1.arrayOffset());
-    // 5，说明bb2的第一个元素相当于bb1的索引为5的偏移
+    // 5，说明bb2的第一个元素相当于bb1的索引为5的偏移1
     System.out.println("arrayOffset:" + bb2.arrayOffset());
   }
 
