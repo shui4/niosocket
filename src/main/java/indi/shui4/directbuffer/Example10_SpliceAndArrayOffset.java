@@ -28,10 +28,12 @@ public class Example10_SpliceAndArrayOffset {
     bb1.position(5);
     final ByteBuffer bb2 = bb1.slice();
     print(bb1, bb2);
+
+    System.out.println("添加元素之后");
     bb2.put(0, (byte) 20);
     bb2.put(1, (byte) 21);
-
     bb1.put(7, (byte) 22);
+
     print(bb1, bb2);
     System.out.println();
     System.out.println("arrayOffset:" + bb1.arrayOffset());

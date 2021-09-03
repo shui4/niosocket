@@ -1,5 +1,7 @@
 package indi.shui4.directbuffer;
 
+import cn.hutool.core.date.StopWatch;
+import cn.hutool.core.lang.Console;
 import com.google.common.base.Stopwatch;
 import org.junit.jupiter.api.Test;
 
@@ -19,13 +21,29 @@ public class Example2_HeapVSDirectOpt {
   @Test
   public void direct() {
     // 1.341 s
-    run(() -> ByteBuffer.allocateDirect(CAPACITY));
+    run(
+        () -> {
+          final Stopwatch stopwatch = Stopwatch.createStarted();
+          final ByteBuffer buffer = ByteBuffer.allocateDirect(CAPACITY);
+          stopwatch.stop();
+          // 创建耗时 ->513.0 ms
+          Console.log("创建耗时 ->{}", stopwatch);
+          return buffer;
+        });
   }
 
   @Test
   public void heap() {
     // 1.966 s
-    run(() -> ByteBuffer.allocate(CAPACITY));
+    run(
+        () -> {
+          final Stopwatch stopwatch = Stopwatch.createStarted();
+          final ByteBuffer buffer = ByteBuffer.allocate(CAPACITY);
+          stopwatch.stop();
+          // 创建耗时 ->403.7 ms
+          Console.log("创建耗时 ->{}", stopwatch);
+          return buffer;
+        });
   }
 
   private void run(Supplier<ByteBuffer> supplier) {

@@ -15,6 +15,9 @@ import java.util.Map;
  */
 public class BufferUtil {
 
+  /** 1~8 */
+  public static final byte[] byteArrayIn = new byte[] {1, 2, 3, 4, 5, 6, 7, 8};
+
   public static String getContent(ByteBuffer buffer) {
     StringBuilder builder = new StringBuilder();
     final int position = buffer.position();
@@ -87,8 +90,6 @@ public class BufferUtil {
     return CollUtil.join(list, ",");
   }
 
-  public static final byte[] byteArrayIn = new byte[8];
-
   public static void print(String id, ByteBuffer byteBuffer) {
     System.out.println(
         id
@@ -98,11 +99,5 @@ public class BufferUtil {
             + byteBuffer.limit()
             + " position="
             + byteBuffer.position());
-  }
-
-  static {
-    for (int i = 0; i < byteArrayIn.length; i++) {
-      byteArrayIn[i] = (byte) (i + 1);
-    }
   }
 }

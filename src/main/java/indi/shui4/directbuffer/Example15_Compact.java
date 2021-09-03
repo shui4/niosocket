@@ -1,5 +1,7 @@
 package indi.shui4.directbuffer;
 
+import indi.shui4.util.BufferUtil;
+
 import java.nio.ByteBuffer;
 
 /**

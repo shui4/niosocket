@@ -1,10 +1,7 @@
 package indi.shui4.directbuffer;
 
-import cn.hutool.core.util.ReflectUtil;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
