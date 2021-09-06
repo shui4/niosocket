@@ -1,5 +1,7 @@
 package indi.shui4.util;
 
+import cn.hutool.core.io.resource.ResourceUtil;
+
 import java.nio.file.Paths;
 
 /**
@@ -14,5 +16,9 @@ public class FileUtil extends cn.hutool.core.io.FileUtil {
 
   public static String getBuildPath(String path) {
     return getCurrentProjectPath() + "\\" + path;
+  }
+
+  public static String getBuildClassPath(String path) {
+    return ResourceUtil.getResource(path).getPath();
   }
 }
