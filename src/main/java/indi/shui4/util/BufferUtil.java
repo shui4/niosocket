@@ -100,4 +100,15 @@ public class BufferUtil {
             + " position="
             + byteBuffer.position());
   }
+
+  public static void print(ByteBuffer byteBuffer) {
+    final byte[] array = byteBuffer.array();
+    for (byte b : array) {
+      if (b == 0) {
+        System.out.print("空格 ");
+      } else {
+        System.out.print((char) b);
+      }
+    }
+  }
 }
