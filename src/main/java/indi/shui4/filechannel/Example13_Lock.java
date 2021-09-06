@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 @SuppressWarnings("all")
 public class Example13_Lock {
 
-  public static final String FILEPATH = "filechannel/13/a.txt";
 
   // 本实验要在2个进程中进行测试，所以要创建2个Java文件。
   @Test
@@ -511,6 +510,6 @@ public class Example13_Lock {
   // </editor-fold>
   
   private FileChannel getChannel() throws FileNotFoundException {
-    return new RandomAccessFile(FileUtil.getBuildPath(FILEPATH), "rw").getChannel();
+    return new RandomAccessFile(FileUtil.getBuildPath("filechannel/13/a.txt"), "rw").getChannel();
   }
 }
