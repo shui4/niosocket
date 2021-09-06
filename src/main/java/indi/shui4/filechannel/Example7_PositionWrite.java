@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  * @author shui4
  * @since 2021/9/6(1.0)
  */
-public class Example7_PartWritePosition {
+public class Example7_PositionWrite {
   /** 1.验证 write(ByteBuffer src, long position) 方法是从通道的指定位置开始写入的 */
   @Test
   public void case1() {
