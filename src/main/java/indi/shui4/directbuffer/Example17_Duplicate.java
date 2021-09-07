@@ -59,5 +59,4 @@ public class Example17_Duplicate {
     }
   }
 
-  public static void main(String[] args) {}
 }
