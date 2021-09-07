@@ -84,7 +84,10 @@ public class Example19MappedByteBuffer {
     buffer.put((byte) 's');
   }
 
-  /** 专用模式（PRIVATE）的测试 */
+  /**
+   * 专用模式（PRIVATE）的测试 <br>
+   * 专用模式可以使对文件的更改只针对当前的MappedByteBuffer可视，并不更改底层文件。
+   */
   @Test
   public void case4Private() {
     try (FileChannel channel = getChannel()) {
@@ -136,8 +139,6 @@ public class Example19MappedByteBuffer {
       e.printStackTrace();
     }
   }
-
-
 
   private FileChannel getChannel() throws FileNotFoundException {
     return getAccessFile().getChannel();
