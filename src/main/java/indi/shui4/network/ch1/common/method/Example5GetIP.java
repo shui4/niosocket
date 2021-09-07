@@ -128,7 +128,7 @@ public class Example5GetIP {
   }
   /** 获得全限主机名和主机名 */
   @Test
-  public void case7GetCanonicalHostNameAndgetHostName() throws UnknownHostException {
+  public void case7GetCanonicalHostNameAndGetHostName() throws UnknownHostException {
     printCase7("A", InetAddress.getLocalHost());
     printCase7("B", InetAddress.getByName("www.ibm.com"));
     printCase7("C", InetAddress.getByName("14.215.177.38"));
