@@ -202,7 +202,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  // <editor-fold desc="8.验证共享锁自己能读">
+  // <editor-fold desc="7.验证共享锁自己能读">
   @Test
   public void case9() {
     try (FileChannel channel = getChannel()) {
@@ -221,7 +221,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  // <editor-fold desc="7.验证共享锁别人能读（case10~11）">
+  // <editor-fold desc="8.验证共享锁别人能读（case10~11）">
   @Test
   public void case10_1() {
     try (FileChannel channel = getChannel()) {
@@ -477,9 +477,9 @@ public class Example13_Lock {
     }
   }
   // </editor-fold>
-  
-  
-  
+
+
+
   // <editor-fold desc="17.验证独享锁与独享锁是互斥关系">
   @Test
   public void case21_1() {
@@ -494,7 +494,7 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
-  
+
   @Test
   public void case21_2() {
     try (FileChannel fileChannel = getChannel()) {
@@ -508,7 +508,7 @@ public class Example13_Lock {
     }
   }
   // </editor-fold>
-  
+
   private FileChannel getChannel() throws FileNotFoundException {
     return new RandomAccessFile(FileUtil.getBuildPath("filechannel/13/a.txt"), "rw").getChannel();
   }
