@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @author shui4
  * @since 1.0
  */
+@SuppressWarnings("all")
 public class SocketUse {
 
   /** 4.3.1 绑定 bind 与 connect 以及端口生成的时机 */
@@ -770,6 +771,66 @@ public class SocketUse {
         } catch (IOException e) {
           e.printStackTrace();
         }
+      }
+    }
+  }
+
+  /** 4.3.14 Socket 选项 KeepAlive */
+  static class Case14SocketOptionKeepAlive {
+    @Test
+    public void server() {
+      try (ServerSocket serverSocket = new ServerSocket(8888)) {
+        System.out.println("server begin");
+        final Socket socket = serverSocket.accept();
+        System.out.println("server end");
+        Thread.sleep(Integer.MAX_VALUE);
+        socket.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+
+    @Test
+    public void client() {
+      System.out.println("client begin");
+      try (Socket socket = new Socket("localhost", 8888)) {
+        System.out.println("a=" + socket.getKeepAlive());
+        socket.setKeepAlive(true);
+
+        System.out.println("b=" + socket.getKeepAlive());
+        System.out.println("client end");
+        try {
+          Thread.sleep(Integer.MAX_VALUE);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  /** 4.3.15 Socket 选项 TrafficClass */
+  static class Case15SocketOptionTrafficClass {
+    @Test
+    public void server() {
+      try (final ServerSocket serverSocket = new ServerSocket(8888);
+          final Socket socket = serverSocket.accept(); ) {
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    @Test
+    public void client() {
+      try (final Socket socket = new Socket()) {
+        socket.setTrafficClass(1);
+        socket.connect(new InetSocketAddress("localhost", 8888));
+        socket.getOutputStream().write("我是发送的数据！".getBytes());
+      } catch (IOException e) {
+        e.printStackTrace();
       }
     }
   }
