@@ -96,7 +96,7 @@ public class TSPSocketCommunication {
     }
   }
 
-  /** 4.1.2 验证 {@link Socket#getInputStream()}也具有阻塞特性 */
+  /** 4.1.2 验证 {@link InputStream#read(byte[])}也具有阻塞特性 */
   public static class Case2BlockedServerSocketRead {
     @Test
     public void server() {
@@ -107,9 +107,11 @@ public class TSPSocketCommunication {
         System.out.println("accept end " + System.currentTimeMillis());
 
         InputStream inputStream = socket.getInputStream();
+        Stopwatch stopwatch = Stopwatch.createStarted();
         System.out.println("read begin " + System.currentTimeMillis());
         inputStream.read(byteArray);
         System.out.println("read end " + System.currentTimeMillis());
+        System.out.println(stopwatch.stop());
       } catch (IOException e) {
         e.printStackTrace();
       }
@@ -226,9 +228,8 @@ public class TSPSocketCommunication {
         while ((readLength = reader.read(charBuffer)) != -1) {
           System.out.print(new String(charBuffer, 0, readLength));
         }
-        stopwatch.stop();
         System.out.println();
-        System.out.println(stopwatch);
+        System.out.println(stopwatch.stop());
 
       } catch (IOException e) {
         e.printStackTrace();
@@ -552,7 +553,7 @@ public class TSPSocketCommunication {
    * 1）服务端先获得ObjectlnputStream对象，客户端就要先获得ObjectOutputStream对象<br>
    * 2）服务端先获得ObjectOutputStream对象，客户端就要先获得ObjectlnputStream对象。
    */
-  public static class ServerAndClientTransportObjAndIO {
+  public static class Case14ServerAndClientTransportObjAndIO {
     public static class UserInfo implements Serializable {
       private long id;
       private String username;
