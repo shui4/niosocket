@@ -1,9 +1,12 @@
 package indi.shui4.sokect.ch2;
 
+import indi.shui4.util.CommonConstant;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.*;
+
+import static indi.shui4.util.CommonConstant.IP;
 
 /**
  * 4.2.8 {@link InetSocketAddress} 类的使用
@@ -14,7 +17,7 @@ import java.net.*;
 public class InetSocketAddressUse {
 
   /** 1. 构造方法 {@link InetSocketAddress#InetSocketAddress(InetAddress, int)} 的使用 */
-  static class ConstructionMethod {
+  static class Case1ConstructionMethod {
     @Test
     public void server() {
       try (ServerSocket serverSocket = new ServerSocket()) {
@@ -40,26 +43,26 @@ public class InetSocketAddressUse {
   }
 
   /** 2. getHostName （）和 getHostString （）方法的区别 */
-  static class GetHostNameAndGetHostStringDiff {
+  static class Case2GetHostNameAndGetHostStringDiff {
     @Test
     public void case1() {
       // 注意，此例需要创建两个InetSocketAddress类的对象才能分析出这两种方法的区别。
-      InetSocketAddress inetSocketAddress1 = new InetSocketAddress("192.168.43.123", 80);
-      InetSocketAddress inetSocketAddress2 = new InetSocketAddress("192.168.43.123", 80);
+      InetSocketAddress inetSocketAddress1 = new InetSocketAddress(IP, 80);
+      InetSocketAddress inetSocketAddress2 = new InetSocketAddress(IP, 80);
       System.out.println(inetSocketAddress1.getHostName());
       System.out.println(inetSocketAddress2.getHostString());
     }
 
     @Test
     public void case2() {
-      InetSocketAddress inetSocketAddress1 = new InetSocketAddress("192.168.43.123", 80);
+      InetSocketAddress inetSocketAddress1 = new InetSocketAddress(IP, 80);
       System.out.println(inetSocketAddress1.getHostName());
       System.out.println(inetSocketAddress1.getHostString());
     }
   }
 
   /** 3.获取IP地址InetAddress对象 */
-  static class GetInetAddress {
+  static class Case3GetInetAddress {
     @Test
     public void main() {
       InetSocketAddress inetSocketAddress = new InetSocketAddress("localhost", 8080);

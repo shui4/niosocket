@@ -78,7 +78,7 @@ public class ServerSocketUse {
         socket4.close();
         socket5.close();
 
-      } catch (IOException | InterruptedException e) {
+      } catch (Exception e) {
 
         e.printStackTrace();
       }
@@ -88,6 +88,7 @@ public class ServerSocketUse {
     public void client() throws IOException {
       for (int i = 0; i < 5; i++) {
         new Socket("localhost", 8088);
+        System.out.println(i);
       }
     }
 
@@ -159,6 +160,8 @@ public class ServerSocketUse {
     public void client() throws IOException {
       InetAddress inetAddress = InetAddress.getLocalHost();
       for (int i = 0; i < 100; i++) {
+        // java.net.ConnectException: Connection refused: connect
+        //        new Socket("localhost", 8088);
         new Socket(inetAddress, 8088);
         System.out.println("client发起连接次数：" + (i + 1));
       }
@@ -220,7 +223,7 @@ public class ServerSocketUse {
     public void server() {
       try (ServerSocket serverSocket = new ServerSocket()) {
         System.out.println("new ServerSocket()无参构造器的端口是" + serverSocket.getLocalPort());
-        serverSocket.bind(new InetSocketAddress("192.168.43.123", 8888));
+        serverSocket.bind(new InetSocketAddress("192.168.0.102", 8888));
         System.out.println("调用完bind方法之后的端口是：" + serverSocket.getLocalPort());
         InetSocketAddress inetSocketAddress =
             (InetSocketAddress) serverSocket.getLocalSocketAddress();
@@ -375,7 +378,4 @@ public class ServerSocketUse {
       }
     }
   }
-  
-  
-  
 }
