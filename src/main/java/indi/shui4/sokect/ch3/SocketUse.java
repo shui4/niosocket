@@ -7,6 +7,8 @@ import java.io.*;
 import java.net.*;
 import java.util.concurrent.TimeUnit;
 
+import static indi.shui4.util.CommonConstant.IP;
+
 /**
  * 4.3 Socket 类的使用
  *
@@ -70,11 +72,15 @@ public class SocketUse {
   static class Case2ConnectAndTimeout {
     @Test
     public void client1() {
+      Stopwatch stopwatch = null;
       try (final Socket socket = new Socket()) {
-        socket.bind(new InetSocketAddress("192.168.0.101", 6666));
-        final Stopwatch stopwatch = Stopwatch.createStarted();
+        socket.bind(new InetSocketAddress(IP, 6666));
+        stopwatch = Stopwatch.createStarted();
         socket.connect(new InetSocketAddress("1.1.1.1", 8880), 6_000);
       } catch (IOException e) {
+        if (e instanceof SocketTimeoutException) {
+          System.out.println(stopwatch.stop());
+        }
         e.printStackTrace();
       }
     }
@@ -196,12 +202,12 @@ public class SocketUse {
         final InetSocketAddress inetSocketAddress =
             (InetSocketAddress) socket.getRemoteSocketAddress();
         final byte[] byteArray = inetAddress.getAddress();
-        System.out.print("客户端的IP地址为：");
+        System.out.print("服务端的IP地址为：");
         for (final byte b : byteArray) {
           System.out.print(b + " ");
         }
         System.out.println();
-        System.out.println("客户端的端口为：" + inetSocketAddress.getPort());
+        System.out.println("服务端的端口为：" + inetSocketAddress.getPort());
       } catch (IOException e) {
         e.printStackTrace();
       }
@@ -398,8 +404,10 @@ public class SocketUse {
   static class Case10SocketOptionSendBufferSize {
     @Test
     public void server() {
-      try (final ServerSocket serverSocket = new ServerSocket(8888);
-          final Socket socket = serverSocket.accept()) {
+      try (final ServerSocket serverSocket = new ServerSocket()) {
+        serverSocket.setReceiveBufferSize(1);
+        serverSocket.bind(new InetSocketAddress(8888));
+        final Socket socket = serverSocket.accept();
         final InputStreamReader reader = new InputStreamReader(socket.getInputStream());
         final char[] chars = new char[1024];
         int readLength;
@@ -417,16 +425,18 @@ public class SocketUse {
     @Test
     public void client() {
       try (final Socket socket = new Socket()) {
-        System.out.println("A client socket.getSendBufferSize()" + socket.getSendBufferSize());
+        System.out.println("A client socket.getSendBufferSize()=" + socket.getSendBufferSize());
         socket.setSendBufferSize(1);
-        //        socket.setSendBufferSize(1024 * 1024);
-        System.out.println("B client socket.getSendBufferSize()" + socket.getSendBufferSize());
+        //        socket.setSendBufferSize(1024*1024);
+        System.out.println("B client socket.getSendBufferSize()=" + socket.getSendBufferSize());
         socket.connect(new InetSocketAddress("localhost", 8888));
         final OutputStream outputStream = socket.getOutputStream();
+        final Stopwatch stopwatch = Stopwatch.createStarted();
         for (int i = 0; i < 5_0000; i++) {
           outputStream.write("123456789123456789123456789123456789123456789".getBytes());
           System.out.println(i + 1);
         }
+        System.out.println("写耗时：" + stopwatch.stop());
       } catch (IOException e) {
         e.printStackTrace();
       }
@@ -580,7 +590,7 @@ public class SocketUse {
       @Test
       public void server() {
         // 这种会超过10s
-        //        final int capacity = 1_000_000*10;
+//                final int capacity = 1_000_000*15;
         final int capacity = 1_000_000;
         final StringBuilder stringBuilder = new StringBuilder(capacity);
         for (int i = 0; i < capacity; i++) {
