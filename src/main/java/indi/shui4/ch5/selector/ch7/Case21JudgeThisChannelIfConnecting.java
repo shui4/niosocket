@@ -65,6 +65,7 @@ public class Case21JudgeThisChannelIfConnecting {
     }
   }
 
+  /** 非阻塞通道，IP存在 */
   @Test
   public void client4() {
     try (SocketChannel socketChannel = SocketChannel.open()) {

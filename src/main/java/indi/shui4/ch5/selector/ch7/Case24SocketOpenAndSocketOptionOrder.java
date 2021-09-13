@@ -36,7 +36,7 @@ public class Case24SocketOpenAndSocketOptionOrder {
     }
   }
 
-  /** 错误的客户端 */
+  /** 错误的客户端，通过抓包工具Win没有变成1234 */
   @Test
   public void case1ErrorClient() {
     try (SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(8088))) {

@@ -22,7 +22,7 @@ import static java.nio.channels.SelectionKey.*;
  * @author shui4
  * @since 1.0
  */
-public class Case15TransferLargeFiles {
+public class Case25TransferLargeFiles {
 
   @Test
   public void server() {

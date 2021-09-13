@@ -12,7 +12,7 @@ import java.nio.channels.ServerSocketChannel;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 5.7.3 执行绑定操作与设置 backlog
+ * 5.7.3 执行绑定操作与设置 backlog {@link ServerSocketChannel#bind(java.net.SocketAddress, int)}
  *
  * @author shui4
  * @since 1.0

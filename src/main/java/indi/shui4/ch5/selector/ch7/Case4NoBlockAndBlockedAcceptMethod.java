@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- * 5.7.4 阻塞与非阻塞以及 accept（）方法的使用效果
+ * 5.7.4 阻塞与非阻塞以及 {@link ServerSocketChannel#accept()}的使用效果
  *
  * @author shui4
  * @since 1.0

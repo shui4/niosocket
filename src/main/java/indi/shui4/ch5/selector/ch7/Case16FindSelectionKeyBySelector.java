@@ -12,7 +12,7 @@ import java.nio.channels.ServerSocketChannel;
  * @author shui4
  * @since 1.0
  */
-public class Case16AccordingToFindCorrespondSelectionKey {
+public class Case16FindSelectionKeyBySelector {
 
   public static void main(String[] args) {
     try (ServerSocketChannel channel = ServerSocketChannel.open()) {

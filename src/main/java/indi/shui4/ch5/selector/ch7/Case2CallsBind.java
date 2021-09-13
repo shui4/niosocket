@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.nio.channels.ServerSocketChannel;
 
 /**
- * 5.7.2 执行绑定操作
+ * 5.7.2 执行绑定操作 {@link ServerSocketChannel#bind(java.net.SocketAddress)}
  *
  * @author shui4
  * @since 1.0

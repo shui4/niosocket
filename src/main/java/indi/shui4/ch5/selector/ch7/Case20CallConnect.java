@@ -9,7 +9,8 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
 /**
- * socketChannel
+ * socketChannel <br>
+ * 这里对比的时候，client启动可以尝试不启动server的情况，非阻塞不会出现异常
  *
  * @author shui4
  * @since 1.0

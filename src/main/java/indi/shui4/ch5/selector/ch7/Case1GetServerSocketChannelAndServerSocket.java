@@ -8,7 +8,8 @@ import java.net.Socket;
 import java.nio.channels.ServerSocketChannel;
 
 /**
- * 5.7.1 获得 ServerSocketChannel 与 ServerSocket socket 对象
+ * 5.7.1 获得 ServerSocketChannel 与 ServerSocket socket 对象 <br>
+ * {@link ServerSocketChannel#open()}
  *
  * @author shui4
  * @since 1.0
