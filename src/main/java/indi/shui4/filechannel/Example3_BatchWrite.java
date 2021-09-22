@@ -1,10 +1,8 @@
 package indi.shui4.filechannel;
 
-import com.google.errorprone.annotations.Var;
 import indi.shui4.util.FileUtil;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;

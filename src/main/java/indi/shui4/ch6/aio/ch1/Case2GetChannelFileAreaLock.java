@@ -1,16 +1,13 @@
 package indi.shui4.ch6.aio.ch1;
 
-import cn.hutool.core.io.checksum.crc16.CRC16CCITTFalse;
 import com.google.common.base.Stopwatch;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.stream.FactoryConfigurationError;
 import java.io.IOException;
 import java.nio.channels.AsynchronousFileChannel;
 import java.nio.channels.FileLock;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.time.chrono.HijrahChronology;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;

@@ -45,7 +45,7 @@ public class Case5JudgingConsumptionSet1AndSet2TheAssociatedObjectsAreTheSame {
         final Iterator<SelectionKey> iterator = selectionKeys.iterator();
         while (iterator.hasNext()) {
           SelectionKey key = iterator.next();
-//          iterator.remove();
+          //          iterator.remove();
           final ServerSocketChannel channel = (ServerSocketChannel) key.channel();
           channel.accept();
         }

@@ -1,9 +1,7 @@
 package indi.shui4.ch5.selector;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.StandardProtocolFamily;
-import java.nio.channels.spi.AbstractSelector;
 import java.nio.channels.spi.SelectorProvider;
 
 /**
@@ -17,11 +15,15 @@ public class Case12SelectorProviderUse {
 
     final SelectorProvider provider = SelectorProvider.provider();
 
-    print("provider",provider);
+    print("provider", provider);
     print("provider.openSelector()", provider.openSelector());
     print("provider.openDatagramChannel()", provider.openDatagramChannel());
-    print("provider.openDatagramChannel(StandardProtocolFamily.INET)", provider.openDatagramChannel(StandardProtocolFamily.INET));
-    print("provider.openDatagramChannel(StandardProtocolFamily.INET6)", provider.openDatagramChannel(StandardProtocolFamily.INET6));
+    print(
+        "provider.openDatagramChannel(StandardProtocolFamily.INET)",
+        provider.openDatagramChannel(StandardProtocolFamily.INET));
+    print(
+        "provider.openDatagramChannel(StandardProtocolFamily.INET6)",
+        provider.openDatagramChannel(StandardProtocolFamily.INET6));
     print("provider.openPipe()", provider.openPipe());
     print("provider.openServerSocketChannel()", provider.openServerSocketChannel());
     print("provider.openSocketChannel()", provider.openSocketChannel());

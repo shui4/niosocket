@@ -4,6 +4,7 @@ import java.nio.CharBuffer;
 
 /**
  * 重载append
+ *
  * @author shui4
  * @since 2021/9/2(1.0)
  */

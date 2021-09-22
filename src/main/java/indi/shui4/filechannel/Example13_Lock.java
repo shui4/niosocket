@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 @SuppressWarnings("all")
 public class Example13_Lock {
 
-
   // 本实验要在2个进程中进行测试，所以要创建2个Java文件。
   @Test
   public void case1_1() {
@@ -477,8 +476,6 @@ public class Example13_Lock {
     }
   }
   // </editor-fold>
-
-
 
   // <editor-fold desc="17.验证独享锁与独享锁是互斥关系">
   @Test

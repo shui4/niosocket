@@ -24,9 +24,9 @@ public class Test2 {
 
   public static void main(String[] args) {
     try (Selector selector = Selector.open();
-         final ServerSocketChannel serverSocketChannel1 =
+        final ServerSocketChannel serverSocketChannel1 =
             SocketChannelUtil.getServerSocketChannel(7777, selector);
-         final ServerSocketChannel serverSocketChannel2 =
+        final ServerSocketChannel serverSocketChannel2 =
             SocketChannelUtil.getServerSocketChannel(8888, selector)) {
 
       new Thread(

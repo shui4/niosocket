@@ -2,7 +2,6 @@ package indi.shui4.ch5.selector.ch7;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
 import java.nio.channels.ServerSocketChannel;
 
 /**

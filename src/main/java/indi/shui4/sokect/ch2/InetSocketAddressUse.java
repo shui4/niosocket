@@ -1,6 +1,5 @@
 package indi.shui4.sokect.ch2;
 
-import indi.shui4.util.CommonConstant;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -96,5 +95,4 @@ public class InetSocketAddressUse {
       System.out.println(inetSocketAddress4.isUnresolved());
     }
   }
-  
 }

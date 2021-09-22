@@ -3,7 +3,6 @@ package indi.shui4.filechannel;
 import indi.shui4.util.FileUtil;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -56,7 +55,7 @@ public class Example5_PartBatchWrite {
   }
   /** 验证 write(ByteBuffer[] srcs, int offset, int length)方法具有同步特性 */
   @Test
-  public void case3(){
+  public void case3() {
     // 略
   }
 }

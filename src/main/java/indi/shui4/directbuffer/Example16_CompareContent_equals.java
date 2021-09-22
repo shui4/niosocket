@@ -60,6 +60,4 @@ public class Example16_CompareContent_equals {
     // byteBuffer1.equals(byteBuffer2):false
     System.out.println("byteBuffer1.equals(byteBuffer2):" + byteBuffer1.equals(byteBuffer2));
   }
-
-
 }

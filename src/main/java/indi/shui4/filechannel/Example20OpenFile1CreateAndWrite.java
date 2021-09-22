@@ -42,6 +42,4 @@ public class Example20OpenFile1CreateAndWrite {
         FileChannel.open(path, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
     fileChannel.close();
   }
-  
-  
 }

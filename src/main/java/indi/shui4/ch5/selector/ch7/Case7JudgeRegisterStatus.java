@@ -1,7 +1,6 @@
 package indi.shui4.ch5.selector.ch7;
 
 import cn.hutool.core.thread.ThreadUtil;
-import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

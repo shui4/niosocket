@@ -3,7 +3,6 @@ package indi.shui4.ch5.selector.ch10.udp.datagram.channel;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;

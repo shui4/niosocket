@@ -1,6 +1,5 @@
 package indi.shui4.ch5.selector.ch9.selectionkeyuse;
 
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

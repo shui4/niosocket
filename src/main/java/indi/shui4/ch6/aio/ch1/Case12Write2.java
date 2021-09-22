@@ -34,10 +34,9 @@ public class Case12Write2 {
               System.out.println("failed=" + exc.getMessage());
             }
           });
-  
-  
+
       TimeUnit.SECONDS.sleep(2);
-      
+
     } catch (IOException | InterruptedException e) {
       e.printStackTrace();
     }

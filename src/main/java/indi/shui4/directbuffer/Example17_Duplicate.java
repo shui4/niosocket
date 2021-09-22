@@ -3,7 +3,6 @@ package indi.shui4.directbuffer;
 import indi.shui4.util.BufferUtil;
 import org.junit.jupiter.api.Test;
 
-import javax.annotation.PreDestroy;
 import java.nio.ByteBuffer;
 
 /**
@@ -58,5 +57,4 @@ public class Example17_Duplicate {
       System.out.print(byteBuffer2.get(i) + " ");
     }
   }
-
 }

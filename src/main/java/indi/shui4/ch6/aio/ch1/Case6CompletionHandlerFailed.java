@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.TimeUnit;
 
-
 /**
  * 6.1.5 CompletionHandler 接口的使用
  *
@@ -41,9 +40,7 @@ public class Case6CompletionHandlerFailed {
     @Override
     public void failed(final Throwable exc, final String attachment) {
       System.out.println("B thread name " + Thread.currentThread().getName());
-      System.out.println(
-          "failed(...) attachment="
-              + attachment);
+      System.out.println("failed(...) attachment=" + attachment);
       System.out.println("getMessage=" + exc.getMessage());
       System.out.println("exc.getClass().getName()=" + exc.getClass().getName());
     }
@@ -52,7 +49,8 @@ public class Case6CompletionHandlerFailed {
   public static void main(String[] args) {
     System.out.println("A thread name " + Thread.currentThread().getName());
     try (AsynchronousFileChannel channel =
-        AsynchronousFileChannel.open(Paths.get("aio/a.txt"), StandardOpenOption.WRITE,StandardOpenOption.READ)) {
+        AsynchronousFileChannel.open(
+            Paths.get("aio/a.txt"), StandardOpenOption.WRITE, StandardOpenOption.READ)) {
       System.out.println("begin time=" + System.currentTimeMillis());
       channel.close();
       channel.lock("我是附加值", new CompletionHandlerImpl(channel));

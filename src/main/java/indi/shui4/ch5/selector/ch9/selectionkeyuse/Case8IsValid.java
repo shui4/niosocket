@@ -1,7 +1,5 @@
 package indi.shui4.ch5.selector.ch9.selectionkeyuse;
 
-import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketEndPointInfo;
-
 import java.io.IOException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;

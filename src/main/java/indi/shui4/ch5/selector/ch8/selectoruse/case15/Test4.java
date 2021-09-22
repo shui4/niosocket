@@ -1,7 +1,5 @@
 package indi.shui4.ch5.selector.ch8.selectoruse.case15;
 
-import indi.shui4.util.SocketChannelUtil;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;

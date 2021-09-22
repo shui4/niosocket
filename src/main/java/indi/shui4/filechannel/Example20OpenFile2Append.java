@@ -10,8 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
 /**
- * {@link StandardOpenOption#APPEND}
- * 现在假设aaa文件中的内容：abcde <br>
+ * {@link StandardOpenOption#APPEND} 现在假设aaa文件中的内容：abcde <br>
  * 运行下面的代码之后结果变为：abcde123
  *
  * @author shui4

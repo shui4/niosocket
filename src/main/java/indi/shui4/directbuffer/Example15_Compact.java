@@ -1,11 +1,10 @@
 package indi.shui4.directbuffer;
 
-import indi.shui4.util.BufferUtil;
-
 import java.nio.ByteBuffer;
 
 /**
  * {@link ByteBuffer#compact()}
+ *
  * @author shui4
  * @since 2021/9/2(1.0)
  */

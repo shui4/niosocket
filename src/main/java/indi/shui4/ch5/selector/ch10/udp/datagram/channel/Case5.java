@@ -1,7 +1,5 @@
 package indi.shui4.ch5.selector.ch10.udp.datagram.channel;
 
-import indi.shui4.util.CommonConstant;
-import jdk.nashorn.internal.runtime.arrays.IteratorAction;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -13,7 +11,6 @@ import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
-import java.nio.channels.SocketChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 

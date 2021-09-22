@@ -1,6 +1,5 @@
 package indi.shui4.ch5.selector.ch7;
 
-import com.sun.nio.sctp.SctpStandardSocketOptions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

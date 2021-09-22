@@ -17,5 +17,4 @@ public class Case9JudgingSelectorIsOpenStatus {
     selector.close();
     System.out.println(selector.isOpen());
   }
-  
 }

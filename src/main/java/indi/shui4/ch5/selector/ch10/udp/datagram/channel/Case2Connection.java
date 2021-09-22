@@ -25,7 +25,7 @@ public class Case2Connection {
   public void client() {
     try (DatagramChannel datagramChannel = DatagramChannel.open()) {
       datagramChannel.configureBlocking(false);
-      datagramChannel.connect(new InetSocketAddress("localhost",8888));
+      datagramChannel.connect(new InetSocketAddress("localhost", 8888));
       final Selector selector = Selector.open();
       datagramChannel.register(selector, SelectionKey.OP_WRITE);
       selector.select();

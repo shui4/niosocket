@@ -590,7 +590,7 @@ public class SocketUse {
       @Test
       public void server() {
         // 这种会超过10s
-//                final int capacity = 1_000_000*15;
+        //                final int capacity = 1_000_000*15;
         final int capacity = 1_000_000;
         final StringBuilder stringBuilder = new StringBuilder(capacity);
         for (int i = 0; i < capacity; i++) {

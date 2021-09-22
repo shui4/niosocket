@@ -1,11 +1,8 @@
 package indi.shui4.ch5.selector.ch7;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.FieldAccessor_Character;
 import indi.shui4.util.FileUtil;
 import org.junit.jupiter.api.Test;
 
-import javax.net.SocketFactory;
-import java.io.Console;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -75,7 +72,7 @@ public class Case25TransferLargeFiles {
 
   @Test
   public void client() {
-    try  {
+    try {
       final SocketChannel socketChannel = SocketChannel.open();
       socketChannel.configureBlocking(false);
       final Selector selector = Selector.open();
