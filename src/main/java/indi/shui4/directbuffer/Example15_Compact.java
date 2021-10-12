@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 
 /**
  * {@link ByteBuffer#compact()}
- *
+ *    http://huatu.98youxi.com/lct/#Xac96dfe58c1cc863d656bccbbfa13c1c
  * @author shui4
  * @since 2021/9/2(1.0)
  */
