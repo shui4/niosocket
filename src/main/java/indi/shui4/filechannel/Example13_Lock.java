@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 @SuppressWarnings("all")
 public class Example13_Lock {
 
+  //<editor-fold desc="1. 两个进程独占锁">
   // 本实验要在2个进程中进行测试，所以要创建2个Java文件。
   @Test
   public void case1_1() {
@@ -54,7 +55,9 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
+  //<editor-fold desc="2.验证AsynchronousCloseException 异常的发生">
   /** 验证AsynchronousCloseException 异常的发生 */
   @Test
   public void case3() {
@@ -88,8 +91,9 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
-  // <editor-fold desc="4.验证FileLockInterruptionException（case4~5）">
+  // <editor-fold desc="3.验证FileLockInterruptionException（case4~5）">
   /**
    * 验证FileLockInterruptionException 异常的发生 <br>
    * 在一个线程 lock之后，被调用了 interrupt出现，也就是说他能够感知中断
@@ -164,7 +168,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  /** 验证共享锁自己不能写（出现异常） */
+  //<editor-fold desc="4.验证共享锁自己不能写（出现异常）">
   @Test
   public void case6() {
     try (FileChannel channel = getChannel()) {
@@ -177,6 +181,7 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
   // <editor-fold desc="5.验证共享锁别人不能写（出异常）（case7）">
   @Test
@@ -201,7 +206,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  // <editor-fold desc="7.验证共享锁自己能读">
+  // <editor-fold desc="6.验证共享锁自己能读">
   @Test
   public void case9() {
     try (FileChannel channel = getChannel()) {
@@ -220,7 +225,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  // <editor-fold desc="8.验证共享锁别人能读（case10~11）">
+  // <editor-fold desc="7.验证共享锁别人能读（case10~11）">
   @Test
   public void case10_1() {
     try (FileChannel channel = getChannel()) {
@@ -255,7 +260,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  /** 验证独占锁自己能写 */
+  //<editor-fold desc="8.验证独占锁自己能写 ">
   @Test
   public void case12() {
     try (FileChannel channel = getChannel()) {
@@ -267,6 +272,7 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
   // <editor-fold desc="9.验证独占锁别人不能写（出现异常）（13、14）">
   @Test
@@ -295,7 +301,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  /** 独占锁自己能读 */
+  //<editor-fold desc="10.独占锁自己能读">
   public void case14() {
     try (FileChannel channel = getChannel()) {
       channel.lock(1, 2, false);
@@ -311,6 +317,7 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
   // <editor-fold desc="11.验证独占锁别人不能读（出现异常）（15、16）">
   @Test
@@ -344,7 +351,7 @@ public class Example13_Lock {
   }
   // </editor-fold>
 
-  /** 验证ock()方法的参数position和size的含义 */
+  //<editor-fold desc="12.验证ock()方法的参数position和size的含义">
   @Test
   public void case16() {
     try (FileChannel channel = getChannel()) {
@@ -368,8 +375,9 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
-  /** 提前锁：当前文件大小小于lock方法参数设置的position时，是可以提前在position位置处加锁的 */
+  //<editor-fold desc="13.提前锁：当前文件大小小于lock方法参数设置的position时，是可以提前在position位置处加锁的">
   @Test
   public void case17() {
     try (FileChannel fileChannel = getChannel()) {
@@ -389,6 +397,7 @@ public class Example13_Lock {
       e.printStackTrace();
     }
   }
+  //</editor-fold>
 
   // <editor-fold desc="14.验证共享锁与共享锁之间是非互斥关系">
   @Test
