@@ -361,6 +361,7 @@ public class ServerSocketUse {
     public void client() {
       try (Socket socket = new Socket()) {
         System.out.println("begin " + socket.getReceiveBufferSize());
+//        socket.setReceiveBufferSize(66);
         socket.connect(new InetSocketAddress("localhost", 8088));
         System.out.println("end " + socket.getReceiveBufferSize());
         final OutputStream outputStream = socket.getOutputStream();
