@@ -6,5 +6,5 @@ package indi.shui4.util;
  */
 public interface CommonConstant {
 
-  String IP = "192.168.0.100";
+  String IP = "127.0.0.1";
 }

@@ -222,7 +222,7 @@ public class ServerSocketUse {
     public void server() {
       try (ServerSocket serverSocket = new ServerSocket()) {
         System.out.println("new ServerSocket()无参构造器的端口是" + serverSocket.getLocalPort());
-        serverSocket.bind(new InetSocketAddress("192.168.0.102", 8888));
+        serverSocket.bind(new InetSocketAddress("localhost", 8888));
         System.out.println("调用完bind方法之后的端口是：" + serverSocket.getLocalPort());
         InetSocketAddress inetSocketAddress =
             (InetSocketAddress) serverSocket.getLocalSocketAddress();
