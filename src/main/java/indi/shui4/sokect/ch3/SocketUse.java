@@ -74,7 +74,7 @@ public class SocketUse {
     public void client1() {
       Stopwatch stopwatch = null;
       try (final Socket socket = new Socket()) {
-        socket.bind(new InetSocketAddress(IP, 6666));
+        socket.bind(new InetSocketAddress("192.168.7.239", 6666));
         stopwatch = Stopwatch.createStarted();
         socket.connect(new InetSocketAddress("1.1.1.1", 8880), 6_000);
       } catch (IOException e) {
@@ -288,9 +288,10 @@ public class SocketUse {
             final OutputStream outputStream = socket.getOutputStream()) {
           outputStream.write("123".getBytes());
           socket.shutdownOutput();
+          TimeUnit.SECONDS.sleep(10);
           // 出现异常
           socket.getOutputStream();
-        } catch (IOException e) {
+        } catch (Exception e) {
           e.printStackTrace();
         }
       }
@@ -301,10 +302,12 @@ public class SocketUse {
             final InputStream inputStream = socket.getInputStream()) {
           final byte[] bytes = new byte[100];
           int readLength;
+          Stopwatch started = Stopwatch.createStarted();
           while ((readLength = inputStream.read(bytes)) != -1) {
             System.out.print(new String(bytes, 0, readLength));
           }
           System.out.println();
+          System.out.println(started.stop());
         } catch (IOException e) {
           e.printStackTrace();
         }
