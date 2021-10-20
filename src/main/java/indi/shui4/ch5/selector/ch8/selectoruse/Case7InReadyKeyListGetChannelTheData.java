@@ -17,26 +17,12 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 5.8.7 从己就绪的键集中获得通道中的数据
+ *
  * @author shui4
  * @since 1.0
  */
 public class Case7InReadyKeyListGetChannelTheData {
-
-  @Test
-  public void client() throws InterruptedException {
-    try (Socket socket = new Socket(); ) {
-      socket.setSendBufferSize(1);
-      socket.connect(new InetSocketAddress("localhost", 8888));
-      final OutputStream outputStream = socket.getOutputStream();
-      outputStream.write("我是中国人，我来自客户端！".getBytes());
-      TimeUnit.SECONDS.sleep(4);
-      outputStream.write("我是中国人，我来自客户端！".getBytes());
-      outputStream.write("我是中国人，我来自客户端！".getBytes());
-      //      outputStream.write("abcdefg".getBytes());
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
 
   @Test
   public void server() {
@@ -73,6 +59,22 @@ public class Case7InReadyKeyListGetChannelTheData {
         }
       }
 
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Test
+  public void client() throws InterruptedException {
+    try (Socket socket = new Socket(); ) {
+      socket.setSendBufferSize(1);
+      socket.connect(new InetSocketAddress("localhost", 8888));
+      final OutputStream outputStream = socket.getOutputStream();
+      outputStream.write("我是中国人，我来自客户端！".getBytes());
+      TimeUnit.SECONDS.sleep(4);
+      outputStream.write("我是中国人，我来自客户端！".getBytes());
+      outputStream.write("我是中国人，我来自客户端！".getBytes());
+      //      outputStream.write("abcdefg".getBytes());
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -37,6 +37,7 @@ public class Case6SelectMethodReturnValueTheMeaningOf {
         final Iterator<SelectionKey> iterator = set2.iterator();
         while (iterator.hasNext()) {
           SelectionKey key = iterator.next();
+          iterator.remove();
           final ServerSocketChannel channel = (ServerSocketChannel) key.channel();
           channel.accept();
         }
